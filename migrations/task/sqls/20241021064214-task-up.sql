@@ -167,7 +167,7 @@ UPDATE "COACH" SET experience_years = 5 WHERE  user_id =
 -- 3-4 刪除：新增一個專長 空中瑜伽 至 SKILL 資料表，之後刪除此專長。
 
 INSERT INTO "SKILL" (name) VALUES ('空中瑜珈');
-DELETE FROM "SKILL" WHERE name = '空中瑜珈'
+DELETE FROM "SKILL" WHERE name = '空中瑜珈';
 
 --  ████████  █████   █    █   █ 
 --    █ █   ██    █  █     █   █ 
@@ -191,6 +191,7 @@ INSERT INTO
     user_id,
     skill_id,
     name,
+    description,
     start_at,
     end_at,
     max_participants,
@@ -200,7 +201,8 @@ VALUES
   (
     (SELECT id FROM "USER" WHERE email = 'lee2000@hexschooltest.io'),
     (SELECT id FROM "SKILL" WHERE name = '重訓'),
-		'重訓基礎課',
+	'重訓基礎課',
+    '本課程適合初學者，教授重訓基礎動作與技巧',
     '2024-11-25 14:00:00',
     '2024-11-25 16:00:00',
     10,
